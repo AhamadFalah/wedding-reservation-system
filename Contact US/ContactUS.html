@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="contactus.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:400,500&display=swap');
+    
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+    
+            .contactusForum {
+                display: flex;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px;
+                background-color: #f2f2f2;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            .contactusForum fieldset {
+                border: none;
+                padding: 0;
+                margin-bottom: 20px;
+                flex: 1;
+            }
+    
+            .contactusForum legend {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+    
+            .contactusForum label {
+                display: block;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                text-align: left;
+            }
+    
+            .contactusForum input[type="text"],
+            .contactusForum input[type="email"],
+            .contactusForum input[type="number"],
+            .contactusForum select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+    
+            .contactusForum input[type="submit"],
+            .contactusForum input[type="reset"] {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+    
+            .contactusForum input[type="submit"]:hover,
+            .contactusForum input[type="reset"]:hover {
+                background-color: #0056b3;
+            }
+    
+            .automatedQaA {
+                display: flex;
+                justify-content: space-between;
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 40px;
+                background-color: #f2f2f2;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            .automatedQaA fieldset {
+                border: none;
+                padding: 0;
+                margin-bottom: 20px;
+                flex: 1;
+            }
+    
+            .automatedQaA legend {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+    
+            .automatedQaA label {
+                display: block;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                text-align: left;
+            }
+    
+            .automatedQaA select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+    
+            .automatedQaA input[type="submit"] {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            #Automatedbtn{
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            #Automatedbtn:hover{
+                background-color: #0056b3;
+            }
+            .automatedQaA input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <div class="contactusForum">
+            <fieldset>
+                <legend>Contact US</legend>
+                <form method="post" action="contactusform.php" onsubmit=" return validateForumData()">
+                    <label>Name: </label>
+                    <input type="text" name="Contact_name" id="contact_name"><br>
+                    <label>Email</label>
+                    <input type="email" name="Contact_email" id="contact_email"><br>
+                    <label>Phone number:</label>
+                    <input type="number" name="Contact_Number" id="contact_number" required><br>
+                    <label>Message</label>
+                    <textarea rows="4" cols="50" name="Conatact_message" id="contact_message"></textarea><br><br>
+                    <input type="submit" id="submitbtn" value="Submit your inquiry">     <input type="reset" id="resetbtn" value="Reset">
+                </form>
+            </fieldset>
+        </div>
+        <div class="automatedQaA">
+            <fieldset>
+                <legend>Automated QaA</legend>
+                <form method="post" action="contactusform.php">
+                    <label>Select question:  </label>
+                    <select id="QAquestion">
+                        <option value="How many venues offered by the hotel?">How many venues offered by the hotel?</option>
+                        <option value="How many staff available?">How many staff available?</option>
+                        <option value="What is the best venue offered by the hotel?">What is the best venue offered by the hotel?</option>
+                        <option value="What is the best package?">What is the best package?</option>
+                        <option value="Who is the price of the basic package per person?">Who is the price of the basic package per person?</option>
+                        <option value="Are there are any special rates offered to the room when booking a hotel?">Are there are any special rates offered to the room when booking a hotel?</option>
+                        <option value="What is the venue which offeres the highes capacity?">What is the venue which offers the highest capacity?</option>
+                        <option value="How many packages offered by the hotel?">How many packages offered by the hotel?</option>
+                    </select><br>
+                    <button type="button" value="Generate automated answer" id="Automatedbtn" onclick="generateAnswer()">Generate automated answer</button>
+                    <p id="answer"></p>
+                </form>
+            </fieldset>
+        </div>
+    </body>
+</html>
